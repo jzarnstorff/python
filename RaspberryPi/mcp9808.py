@@ -48,7 +48,7 @@ class MCP9808():
 
 
     def get_temperature(self):
-        """Calculates and returns temperature a float in Celsius"""
+        """Calculates and returns temperature as float in Celsius"""
 
         """Read word from temp reg and split word"""
         self.temp = self.read_word(reg.Temp)

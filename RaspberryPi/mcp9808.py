@@ -36,9 +36,24 @@ class MCP9808():
         self.addr = dev_addr
 
 
+    def read_byte(self, register):
+        """Returns one byte from specified register passed into method"""
+        return self.bus.read_byte_data(self.addr, register)
+
+
+    def write_byte(self, register, value):
+        """Writes one byte to specified register passed into method"""
+        return self.bus.write_byte_data(self.addr, register, value)
+
+
     def read_word(self, register):
         """Returns 16 bit word from specified register passed into method"""
         return self.bus.read_word_data(self.addr, register)
+
+
+    def write_word(self, register, value):
+        """Writes a 16 bit word to specified register passed into method"""
+        return self.bus.write_word_data(self.addr, register, value)
 
 
     def byte_split_16(self, word):
